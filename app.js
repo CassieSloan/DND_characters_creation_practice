@@ -3,9 +3,12 @@ const exhbs = require("express-handlebars");
 const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
+const routes = require("./routes")
+const axios = require("axios");
+
 
 //set up database
-mongoose.connect("mongodb://localhost/plant_depo",
+mongoose.connect("mongodb://localhost/first_express-nodejs-backend",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -19,6 +22,8 @@ mongoose.connection.on("error", error => console.log(error));
 app.engine("handlebars", exhbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+app.use(routes);
+app.use(axios);
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json()); //replaced default notation with JSON (stream is default);

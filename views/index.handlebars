@@ -1,0 +1,11 @@
+<h1>The main page for showing and making characters!</h1>
+
+{{#each races}}
+<div>
+    <p>Race: {{ this.name }}</p>
+</div>
+{{!-- <a href="/races/{{this._id}}">View Plant</a> --}}
+{{!-- <a href="/races/{{this._id}}?_method=DELETE">Delete Plant</a>
+<a href="/races/{{this._id}}/edit">Edit Plant</a> --}}
+<hr />
+{{/each}}
