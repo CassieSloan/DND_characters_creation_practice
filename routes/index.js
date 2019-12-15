@@ -3,5 +3,7 @@ const router = express.Router(); //using standard express router (package includ
 const CharacterController = require("../controllers/character_controller");
 
 router.get("/", CharacterController.index);
+router.get("/new", CharacterController.make);
+router.post("/", CharacterController.create);
 
 module.exports = router

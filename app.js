@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 const routes = require("./routes")
 const axios = require("axios");
-
+const methodOverride = require("method-override");
 
 //set up database
 mongoose.connect("mongodb://localhost/first_express-nodejs-backend",
@@ -21,6 +21,8 @@ mongoose.connection.on("error", error => console.log(error));
 //viewing engine (html) - not relevent to react
 app.engine("handlebars", exhbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
+
+app.use(methodOverride('_method', { methods: ['POST', 'GET'] })) // These are the verbs we allow to overide
 
 app.use(routes);
 app.use(axios);

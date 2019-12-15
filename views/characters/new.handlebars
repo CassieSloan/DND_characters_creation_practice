@@ -1,0 +1,58 @@
+<h1>Create you character here!</h1>
+
+<div>
+    <p>Choose Race:</p>
+    <select>
+        {{#each races}}
+            <option> 
+            {{ this.name }}
+            {{/each}}
+            </option>
+    </select>
+</div>
+
+<div>
+    <p>Choose Class:</p>
+    <select>
+        {{#each classes}}
+            <option> 
+            {{ this.name }}
+            {{/each}}
+            </option>
+    </select>
+</div>
+
+<div>
+    {{!-- add restrictions to only select tw0 --}}
+    <p>Choose language: (pick two)</p>
+    <form>
+        {{#each languages}}
+            <input type="checkbox"> 
+            {{ this.name }}
+            {{/each}}
+    </form>
+</div>
+
+<div>
+    Choose Alignment:
+    <form>
+        <input type="radio"/> Chaotic Good
+        <input type="radio"/> Neutral Good
+        <input type="radio"/> Lawful Good
+        <input type="radio"/> Chaotic Neutral
+        <input type="radio"/> True Neutral
+        <input type="radio"/> Lawful Neutral
+        <input type="radio"/> Chaotic Evil
+        <input type="radio"/> Neutral Evil
+        <input type="radio"/> Lawful Evil
+    </form>
+</div>
+
+{{! point assignment for ability score
+//variable holding points
+//dropdown option value 0-8
+//variable = variable - sum of drop down selections}}
+
+
+
+<input type="submit" value="Save Character!">
