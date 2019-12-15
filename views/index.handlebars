@@ -1,11 +1,31 @@
 <h1>The main page for showing and making characters!</h1>
 
-{{#each races}}
 <div>
-    <p>Race: {{ this.name }}</p>
+    <p>Choose Race:</p>
+    <select>
+        {{#each races}}
+            <option> 
+            {{ this.name }}
+            {{/each}}
+            </option>
+    </select>
 </div>
+
+<div>
+    <p>Choose Class:</p>
+    <select>
+        {{#each classes}}
+            <option> 
+            {{ this.name }}
+            {{/each}}
+            </option>
+    </select>
+</div>
+
+<input type="submit" value="Save Character!">
+
+
 {{!-- <a href="/races/{{this._id}}">View Plant</a> --}}
 {{!-- <a href="/races/{{this._id}}?_method=DELETE">Delete Plant</a>
 <a href="/races/{{this._id}}/edit">Edit Plant</a> --}}
 <hr />
-{{/each}}

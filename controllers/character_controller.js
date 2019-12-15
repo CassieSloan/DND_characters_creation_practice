@@ -1,8 +1,9 @@
-const DndService = require("../services/api");
+const DndService = require("../services/dnd_api");
 
 const index = async (req, res) => {
     let races = await DndService.races();
-    res.render("index", {races});
+    let classes = await DndService.classes();
+    res.render("index", {races, classes});
 }   
 module.exports = {
     index,
